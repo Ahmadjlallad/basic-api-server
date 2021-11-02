@@ -1,4 +1,4 @@
-import { sequelize, DateDataTypeOptions } from "sequelize";
+// import { sequelize, DateDataTypeOptions } from "sequelize";
 /**
  * @function food - Module representing the food model.
  * create a new food model using define method of sequelize.
