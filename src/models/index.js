@@ -1,16 +1,17 @@
 "use strict";
 const { Sequelize, DataTypes } = require("sequelize");
+require("dotenv").config();
 const food = require("./food.model");
 const clothes = require("./clothes.model");
 const POSTGRES_URI =
   process.env.NODE_ENV === "production"
     ? process.env.DATABASE_URL
     : "sqlite:memory:";
-console.log(process.env.DATABASE_URL);
 // NOTE we will configure connection option for proud
 let sequelizeOptions =
   process.env.NODE_ENV === "production"
     ? {
+        dialect: "postgres",
         dialectOptions: {
           ssl: {
             require: true,
@@ -19,10 +20,7 @@ let sequelizeOptions =
         },
       }
     : {};
-
-const sequelize = new Sequelize(POSTGRES_URI, {
-  sequelizeOptions,
-});
+const sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 
 module.exports = {
   db: sequelize,
