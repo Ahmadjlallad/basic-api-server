@@ -5,6 +5,8 @@ const errorHandler = require("./error-handlers/500");
 const logger = require("./middleware/logger");
 const foodRouter = require("./route/food.route");
 const clothesRouter = require("./route/clothes.route");
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 app.use(logger);
 
