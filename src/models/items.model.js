@@ -11,9 +11,9 @@ const item = (sequelize, DataTypes) =>
     id: { type: DataTypes.STRING, allowNull: false },
     category: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
-    price: { type: Sequelize.FLOAT, allowNull: false },
+    price: { type: DataTypes.FLOAT, allowNull: false },
     description: { type: DataTypes.STRING, allowNull: false },
-    inventoryCount: { type: Sequelize.FLOAT, allowNull: false },
+    inventoryCount: { type: DataTypes.FLOAT, allowNull: false },
     image: { type: DataTypes.STRING, allowNull: false },
   });
 
