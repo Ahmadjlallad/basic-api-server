@@ -3,6 +3,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 require("dotenv").config();
 const food = require("./food.model");
 const clothes = require("./clothes.model");
+const items = require("./items.model");
 const POSTGRES_URI =
   process.env.NODE_ENV === "production"
     ? process.env.DATABASE_URL
@@ -26,4 +27,5 @@ module.exports = {
   db: sequelize,
   food: food(sequelize, DataTypes),
   clothes: clothes(sequelize, DataTypes),
+  items: items(sequelize, DataTypes),
 };
