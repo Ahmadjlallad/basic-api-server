@@ -5,6 +5,7 @@ const errorHandler = require("./error-handlers/500");
 const logger = require("./middleware/logger");
 const foodRouter = require("./route/food.route");
 const clothesRouter = require("./route/clothes.route");
+const itemsRoute = require("./route/items.route");
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
@@ -16,6 +17,7 @@ app.get("/", (_, res, next) => {
 
 app.use("/food", foodRouter);
 app.use("/clothes", clothesRouter);
+app.use("/itemsRoute", itemsRoute);
 app.use(errorHandler);
 app.use("*", notFoundHandler);
 const start = (port) => {
