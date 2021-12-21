@@ -8,7 +8,7 @@
 
 const item = (sequelize, DataTypes) =>
   sequelize.define("item", {
-    id: { type: DataTypes.STRING, allowNull: false },
+    id: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
     category: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
     price: { type: DataTypes.FLOAT, allowNull: false },
