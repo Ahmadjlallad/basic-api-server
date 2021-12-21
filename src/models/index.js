@@ -1,6 +1,7 @@
 "use strict";
 const { Sequelize, DataTypes } = require("sequelize");
 require("dotenv").config();
+
 const food = require("./food.model");
 const clothes = require("./clothes.model");
 const items = require("./items.model");
